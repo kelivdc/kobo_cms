@@ -1,0 +1,24 @@
+---
+import "@fontsource/nunito";
+const { title, description } = Astro.props;
+const { slug } = Astro.params;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description || "Blog otomotif"} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="max-w-[1040px] m-auto bg-white">
+      <slot />
+    </div>
+    <script
+      is:inline
+      src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"
+    ></script>
+  </body>
+</html>
